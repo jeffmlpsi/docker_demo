@@ -1,0 +1,43 @@
+####AFTER INSTALLING DOCKER####
+# grep /etc/group - e "docker"
+# sudo usermod -aG docker $USER
+# newgrp docker
+#--- might need sudo groupadd docker
+#######################################
+
+################### USEFUL CMDS ################################
+# List all the containers
+docker container ls --all
+# Start containers
+docker start <container name>
+# Stop container
+docker stop <container name>
+# Delete conntainer
+docker rm <container name>
+# Jump into a running container
+docker exec -it <container name> <cmd>
+docker exec -it t2 /bin/sh
+# Specify CMD from the cmdline
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+docker run -dp 127.0.0.1:3000:3000 --name=t2 getting_started watch "echo 'this is a test'"
+# Manage images
+docker image ls --all
+# Look at logs of running/failed containers
+docker logs <name>
+
+
+## USEFUL LINKS
+https://docs.docker.com/engine/reference/commandline/build/
+
+
+##Lets use the getting started demo on the docker site
+
+https://docs.docker.com/get-started/02_our_app/ <---- go here
+git clone https://github.com/docker/getting-started.git
+
+
+
+
+
+
+
